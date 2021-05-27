@@ -6,7 +6,7 @@ using System.Text;
 
 namespace JwtAuthentication.API.Middlewares
 {
-    public static class AutenticationExtension
+    public static class AutenticationMiddleware
     {
         public static IServiceCollection AddTokenAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
@@ -21,10 +21,10 @@ namespace JwtAuthentication.API.Middlewares
                 jwt.TokenValidationParameters = new TokenValidationParameters
                 {
                     IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidIssuer = "localhost",
-                    ValidAudience = "localhost"
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    //ValidIssuer = "localhost",
+                    //ValidAudience = "localhost"
                 };
             });
 

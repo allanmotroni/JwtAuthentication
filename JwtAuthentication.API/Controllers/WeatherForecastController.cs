@@ -7,9 +7,9 @@ using System.Linq;
 
 namespace JwtAuthentication.API.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     [Authorize]
+    [Route("api/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

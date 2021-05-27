@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace JwtAuthentication.API.Middlewares
 {
-    public static class DependencyInjectionExtension
+    public static class DependencyInjectionMiddleware
     {
         public static void AddDependecyInjection(this IServiceCollection services)
         {
