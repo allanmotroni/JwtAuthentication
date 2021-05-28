@@ -18,13 +18,14 @@ namespace JwtAuthentication.API.Middlewares
                 authentication.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
             .AddJwtBearer(jwt => {
+                jwt.RequireHttpsMetadata = false;
+                jwt.SaveToken = true;
                 jwt.TokenValidationParameters = new TokenValidationParameters
                 {
+                    ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = false,
-                    ValidateAudience = false,
-                    //ValidIssuer = "localhost",
-                    //ValidAudience = "localhost"
+                    ValidateAudience = false                    
                 };
             });
 

@@ -29,7 +29,7 @@ namespace JwtAuthentication.API.Services
                 {
                     new Claim(ClaimTypes.Email,email)
                 }),
-                //Expires = DateTime.UtcNow.AddMinutes(double.Parse(expirationInMinutes)),
+                Expires = DateTime.UtcNow.AddMinutes(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 
